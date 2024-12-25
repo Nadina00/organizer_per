@@ -1,0 +1,165 @@
+.form {
+  max-width: 400px; /* Максимальная ширина формы */
+  margin: 20px auto; /* Центрирование формы */
+  padding: 20px; /* Внутренние отступы */
+  background-color: #f9f9f9; /* Светло-серый фон */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  font-family: Arial, sans-serif; /* Основной шрифт */
+}
+
+label {
+  display: block; /* Блочное отображение метки */
+  margin-bottom: 10px; /* Отступ снизу */
+  font-weight: bold; /* Жирный шрифт для меток */
+  color: #333; /* Темный цвет текста */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  width: 100%; /* Полная ширина */
+  padding: 10px; /* Внутренние отступы */
+  margin-top: 5px; /* Отступ сверху */
+  margin-bottom: 15px; /* Отступ снизу */
+  border: 1px solid #ccc; /* Серая граница */
+  border-radius: 5px; /* Скругленные углы */
+  box-sizing: border-box; /* Включение границ и отступов в ширину */
+  font-size: 16px; /* Размер шрифта */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #4a90e2; /* Цвет границы при фокусе */
+  outline: none; /* Убираем стандартное выделение */
+}
+
+button[type="submit"] {
+  padding: 10px 20px; /* Внутренние отступы */
+  background-color: #4a90e2; /* Цвет кнопки */
+  color: white; /* Белый цвет текста */
+  border: none; /* Без границы */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор в виде указателя */
+  font-size: 16px; /* Размер шрифта */
+  transition: background-color 0.3s ease; /* Переход для фона */
+}
+
+button[type="submit"]:hover {
+  background-color: #357ab8; /* Темно-синий цвет при наведении */
+}
+
+/* Контейнер новостей/контактов */
+.news_container {
+  max-width: 800px; /* Максимальная ширина контейнера */
+  margin: 40px auto; /* Центрирование контейнера */
+  padding: 20px; /* Внутренние отступы */
+  background-color: #f0f4f7; /* Светло-голубой фон */
+  border-radius: 10px; /* Скругленные углы */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  font-family: Arial, sans-serif; /* Основной шрифт */
+}
+
+/* Заголовок новостей/контактов */
+.news_container h2 {
+  font-size: 28px; /* Размер шрифта */
+  margin-bottom: 20px; /* Отступ снизу */
+  text-align: center; /* Центрирование текста */
+  color: #2c3e50; /* Темно-синий цвет */
+}
+
+/* Список новостей/контактов */
+.news_list {
+  list-style: none; /* Убираем стандартные маркеры списка */
+  padding: 0; /* Убираем отступы */
+}
+
+/* Элемент списка контактов */
+.news_item {
+  background-color: #ffffff; /* Белый фон элемента */
+  margin-bottom: 15px; /* Отступ снизу */
+  padding: 20px; /* Внутренние отступы */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация при наведении */
+}
+
+/* Эффект при наведении на элемент */
+.news_item:hover {
+  transform: translateY(-5px); /* Поднятие элемента при наведении */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Усиление тени при наведении */
+}
+
+/* Заголовок контакта */
+.news_item h3 {
+  font-size: 22px; /* Размер шрифта */
+  color: #34495e; /* Темно-синий цвет */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Параграф с информацией о контакте */
+.news_item p {
+  font-size: 16px; /* Размер шрифта */
+  color: #7f8c8d; /* Серый цвет текста */
+  margin: 5px 0; /* Отступы сверху и снизу */
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 600px) {
+  .news_container {
+    padding: 15px; /* Уменьшаем отступы на мобильных устройствах */
+  }
+
+  .news_item {
+    padding: 15px; /* Уменьшаем отступы в элементах списка */
+  }
+
+  .news_item h3 {
+    font-size: 20px; /* Уменьшаем размер заголовка */
+  }
+
+  .news_item p {
+    font-size: 14px; /* Уменьшаем размер текста */
+  }
+}
+/* Основной стиль кнопки "Удалить" */
+.delete_button {
+  display: inline-flex; /* Выровнено по центру */
+  justify-content: center; /* Центрирование содержимого по горизонтали */
+  align-items: center; /* Центрирование содержимого по вертикали */
+  padding: 10px 15px; /* Внутренние отступы */
+  border: rgb(16, 15, 15) 1px solid; /* Убираем границу */
+  border-radius: 6px; /* Скругленные углы кнопки */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: background-color 0.3s ease; /* Плавный переход фона */
+  font-size: 16px; /* Размер шрифта */
+  color: #7f8c8d; /* Серый цвет текста */
+}
+
+/* Иконка удаления внутри кнопки */
+.delete_icon {
+  width: 20px; /* Ширина иконки */
+  height: 20px; /* Высота иконки */
+  stroke: white; /* Белый цвет линии иконки */
+}
+
+/* Изменение фона кнопки при наведении */
+.delete_button:hover {
+  background-color: #c0392b; /* Темно-красный фон при наведении */
+}
+
+/* Фокус на кнопке для клавиатурной навигации */
+.delete_button:focus {
+  outline: 2px solid #c0392b; /* Обводка при фокусе */
+}
+.search_input {
+  width: 100%; /* Полная ширина */
+  padding: 10px; /* Внутренние отступы */
+  margin-bottom: 20px; /* Отступ снизу */
+  border: 1px solid #ccc; /* Серая граница */
+  border-radius: 5px; /* Скругленные углы */
+  font-size: 16px; /* Размер шрифта */
+}

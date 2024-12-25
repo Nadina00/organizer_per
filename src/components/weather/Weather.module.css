@@ -1,0 +1,204 @@
+/* --- Основной контейнер погоды --- */
+.weather_container {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.weather_container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #00796b;
+}
+
+.weather_temperature {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #ff5722;
+}
+
+.weather_condition {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #616161;
+}
+
+.weather_icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.weather-detail-item {
+  font-size: 16px;
+  color: #37474f;
+}
+
+.weather-detail-item span {
+  font-weight: bold;
+}
+
+/* --- Стили списка городов --- */
+.city_list_container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f6f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.city-list-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #37474f;
+}
+
+.city_list {
+  list-style: none;
+  padding: 0;
+}
+
+.city-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.city_list_item:hover {
+  background-color: #e0f2f1;
+}
+
+.city_list_link {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.city_list_link:hover {
+  color: #0d47a1;
+}
+
+/* --- Медиазапросы для адаптации --- */
+
+/* --- До 1200px --- */
+@media (max-width: 1200px) {
+  .weather_container,
+  .city_list_container {
+    max-width: 90%; /* Ширина растягивается до 90% экрана */
+    padding: 15px; /* Уменьшаем внутренние отступы */
+  }
+
+  .weather_container h2,
+  .city-list-title {
+    font-size: 22px; /* Уменьшаем заголовки */
+  }
+
+  .weather_temperature {
+    font-size: 32px; /* Уменьшаем размер температуры */
+  }
+
+  .weather_condition {
+    font-size: 16px;
+  }
+
+  .weather-details {
+    flex-wrap: wrap; /* Переход на новую строку при необходимости */
+  }
+
+  .weather-detail-item {
+    font-size: 14px;
+  }
+}
+
+/* --- До 768px --- */
+@media (max-width: 768px) {
+  .weather_container,
+  .city_list_container {
+    max-width: 100%; /* Контейнеры занимают всю ширину */
+    padding: 10px; /* Компактные отступы */
+  }
+
+  .weather_container h2,
+  .city-list-title {
+    font-size: 20px;
+  }
+
+  .weather_temperature {
+    font-size: 28px; /* Еще меньше для мобильных устройств */
+  }
+
+  .weather_condition {
+    font-size: 14px;
+  }
+
+  .weather-details {
+    flex-direction: column; /* Элементы располагаются в колонку */
+    align-items: center;
+    gap: 10px; /* Добавляем расстояние между строками */
+  }
+
+  .weather-detail-item {
+    font-size: 12px;
+  }
+
+  .city-list-item {
+    flex-direction: column; /* Элементы располагаются в столбик */
+    align-items: flex-start; /* Выравнивание по левому краю */
+  }
+}
+
+/* --- До 480px --- */
+@media (max-width: 480px) {
+  .weather_container,
+  .city_list_container {
+    padding: 8px; /* Минимальные отступы */
+    text-align: center; /* Текст по центру */
+  }
+
+  .weather_container h2,
+  .city-list-title {
+    font-size: 18px; /* Минимальные размеры заголовков */
+  }
+
+  .weather_temperature {
+    font-size: 24px; /* Компактная температура */
+  }
+
+  .weather_condition {
+    font-size: 12px;
+  }
+
+  .weather-details {
+    gap: 5px; /* Минимальный отступ между строками */
+  }
+
+  .city-list-item {
+    padding: 8px; /* Компактные элементы списка */
+    margin-bottom: 5px;
+  }
+
+  .city_list_link {
+    font-size: 14px; /* Уменьшаем размер ссылки */
+  }
+}

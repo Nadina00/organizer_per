@@ -1,0 +1,90 @@
+/* Основные стили */
+.currencyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #3498db;
+  border-radius: 6px;
+  max-width: 180px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.exchangeRate {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.rateLabel {
+  font-weight: 600;
+  color: #555;
+  margin-right: 4px;
+}
+
+/* --- Адаптация для ширины до 1200px --- */
+@media (max-width: 1200px) {
+  .currencyContainer {
+    max-width: 150px; /* Уменьшаем ширину контейнера */
+    padding: 8px; /* Сокращаем внутренние отступы */
+  }
+
+  .title {
+    font-size: 14px; /* Уменьшаем размер текста */
+  }
+
+  .exchangeRate {
+    font-size: 12px;
+  }
+}
+
+/* --- Адаптация для ширины до 768px --- */
+@media (max-width: 768px) {
+  .currencyContainer {
+    max-width: 468px; /* Контейнер занимает всю ширину */
+    align-items: center; /* Центрируем содержимое */
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 16px; /* Сохраняем читаемый размер текста */
+    text-align: center;
+  }
+
+  .exchangeRate {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* --- Адаптация для ширины до 480px --- */
+@media (max-width: 480px) {
+  .currencyContainer {
+    max-width: 320px; /* Контейнер занимает всю ширину */
+    padding: 8px; /* Уменьшаем отступы */
+    flex-direction: column; /* Сохраняем колонку */
+    align-items: center; /* Центрируем элементы */
+  }
+
+  .title {
+    font-size: 14px; /* Уменьшаем текст */
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .exchangeRate {
+    font-size: 12px; /* Уменьшаем текст */
+    text-align: center;
+    margin: 3px 0;
+  }
+}

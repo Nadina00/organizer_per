@@ -1,0 +1,1 @@
+export const currencyList = state => state.currency.currency

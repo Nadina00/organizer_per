@@ -1,0 +1,194 @@
+/* --- Основные стили --- */
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #343a40;
+}
+
+.formGroup {
+  width: 450px;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.inputPassword {
+  padding: 10px;
+  border: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.passwordContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.passwordToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: -30px;
+  outline: none;
+  position: absolute;
+  left: 95%;
+  top: 5%;
+}
+
+.passwordToggle svg {
+  fill: #6c757d;
+  transition: fill 0.3s ease;
+}
+
+.passwordToggle:hover svg {
+  fill: #007bff;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.registerLink {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #007bff;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* --- Медиазапросы для адаптации --- */
+
+/* --- До 1200px --- */
+@media (max-width: 1200px) {
+  .loginFormContainer {
+    max-width: 90%; /* Контейнер растягивается до 90% экрана */
+    padding: 15px; /* Уменьшаем внутренние отступы */
+  }
+
+  .formGroup {
+    width: 100%; /* Форма занимает всю ширину */
+  }
+
+  .header {
+    font-size: 1.3rem; /* Уменьшаем размер заголовка */
+  }
+
+  .submitButton {
+    font-size: 0.95rem; /* Компактная кнопка */
+  }
+}
+
+/* --- До 768px --- */
+@media (max-width: 768px) {
+  .loginFormContainer {
+    padding: 10px; /* Компактные отступы */
+    max-width: 768px;
+  }
+
+  .header {
+    font-size: 1.2rem; /* Уменьшаем заголовок */
+    text-align: center; /* Центрируем заголовок */
+  }
+
+  .formGroup {
+    width: 100%; /* Форма занимает всю ширину */
+  }
+
+  .label {
+    font-size: 0.85rem; /* Уменьшаем текст меток */
+  }
+
+  .input {
+    font-size: 0.9rem; /* Уменьшаем текст в полях */
+    padding: 8px; /* Уменьшаем отступы */
+  }
+
+  .submitButton {
+    font-size: 0.9rem; /* Еще меньше текст на кнопке */
+  }
+}
+
+/* --- До 480px --- */
+@media (max-width: 480px) {
+  .loginFormContainer {
+    padding: 8px; /* Минимальные отступы */
+    max-width: 468px;
+  }
+
+  .header {
+    font-size: 1rem; /* Минимальный размер заголовка */
+    margin-bottom: 10px;
+  }
+
+  .formGroup {
+    width: 100%; /* Поля на всю ширину */
+    margin-bottom: 10px; /* Компактные отступы */
+  }
+
+  .label {
+    font-size: 0.8rem; /* Минимальный размер текста меток */
+  }
+
+  .input {
+    font-size: 0.85rem; /* Минимальный текст в полях */
+    padding: 6px; /* Компактные отступы */
+  }
+
+  .submitButton {
+    font-size: 0.85rem;
+    padding: 8px; /* Компактная кнопка */
+  }
+
+  .registerLink {
+    font-size: 0.85rem; /* Уменьшаем ссылку */
+  }
+}

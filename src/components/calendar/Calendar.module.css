@@ -1,0 +1,74 @@
+/* --- Основные стили --- */
+.calendarContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendarTitle {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 20px;
+  }
+  
+  .calendarWrapper {
+    height: 500px;
+  }
+  
+  /* --- Медиазапросы для адаптации --- */
+  
+  /* До 1200px (планшеты и маленькие ноутбуки) */
+  @media (max-width: 1200px) {
+    .calendarContainer {
+      max-width: 1200px; /* Контейнер занимает до 90% ширины */
+      padding: 15px; /* Уменьшаем внутренние отступы */
+    }
+  
+    .calendarTitle {
+      font-size: 1.3rem; /* Немного уменьшаем текст заголовка */
+    }
+  
+    .calendarWrapper {
+      height: 400px; /* Высота календаря уменьшена */
+    }
+  }
+  
+  /* До 768px (планшеты и большие мобильные устройства) */
+  @media (max-width: 768px) {
+    .calendarContainer {
+      max-width: 768px; /* Контейнер растягивается на всю ширину */
+      padding: 10px; /* Минимальные внутренние отступы */
+    }
+  
+    .calendarTitle {
+      font-size: 1.2rem; /* Уменьшаем заголовок */
+      margin-bottom: 15px; /* Сокращаем отступ снизу */
+    }
+  
+    .calendarWrapper {
+      height: 300px; /* Компактная высота для планшетов */
+    }
+  }
+  
+  /* До 480px (мобильные устройства) */
+  @media (max-width: 480px) {
+    .calendarContainer {
+      padding: 8px; /* Минимальные отступы для мобильных */
+      box-shadow: none;
+      max-width: 480px; /* Убираем тени для упрощения отображения */
+    }
+  
+    .calendarTitle {
+      font-size: 1rem; /* Минимальный размер заголовка */
+      margin-bottom: 10px; /* Уменьшенный отступ */
+    }
+  
+    .calendarWrapper {
+      height: 250px; /* Минимальная высота для мобильных */
+    }
+  }
+  

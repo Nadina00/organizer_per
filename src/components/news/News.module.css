@@ -1,0 +1,143 @@
+/* --- Основные стили --- */
+.news_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news_container h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* --- Стили для списка новостей --- */
+.news_list {
+  list-style: none;
+  padding: 0;
+}
+
+.news_item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news_item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Заголовок новости --- */
+.news_item h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #4a90e2;
+}
+
+/* --- Описание новости --- */
+.news_item p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* --- Ссылка на полную статью --- */
+.news_item a {
+  color: #e74c3c;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.news_item a:hover {
+  color: #c0392b;
+}
+
+/* --- Адаптация для ширины до 1200px --- */
+@media (max-width: 1200px) {
+  .news_container {
+    max-width: 90%; /* Контейнер растягивается до 90% ширины */
+  }
+
+  .news_container h2 {
+    font-size: 24px; /* Уменьшаем заголовок */
+  }
+
+  .news_item {
+    padding: 15px; /* Уменьшаем внутренние отступы */
+  }
+
+  .news_item h3 {
+    font-size: 18px; /* Уменьшаем шрифт заголовка новости */
+  }
+
+  .news_item p {
+    font-size: 14px;
+  }
+}
+
+/* --- Адаптация для ширины до 768px --- */
+@media (max-width: 768px) {
+  .news_container {
+    max-width: 468px;
+    padding: 15px; /* Уменьшаем отступы контейнера */
+  }
+
+  .news_item {
+    padding: 12px; /* Еще меньшие отступы */
+  }
+
+  .news_container h2 {
+    font-size: 22px; /* Уменьшаем заголовок */
+  }
+
+  .news_item h3 {
+    font-size: 16px; /* Компактный заголовок новости */
+  }
+
+  .news_item p {
+    font-size: 14px; /* Уменьшаем текст описания */
+  }
+
+  .news_item a {
+    font-size: 14px; /* Уменьшаем размер ссылки */
+  }
+}
+
+/* --- Адаптация для ширины до 480px --- */
+@media (max-width: 480px) {
+  .news_container {
+    max-width: 320px;
+    padding: 10px; /* Минимальные отступы */
+  }
+
+  .news_item {
+    padding: 10px; /* Компактные новости */
+    margin-bottom: 10px; /* Уменьшаем расстояние между новостями */
+  }
+
+  .news_container h2 {
+    font-size: 20px; /* Компактный заголовок */
+  }
+
+  .news_item h3 {
+    font-size: 14px; /* Уменьшаем шрифт заголовка новости */
+  }
+
+  .news_item p {
+    font-size: 12px; /* Минимальный шрифт описания */
+  }
+
+  .news_item a {
+    font-size: 12px; /* Минимальный шрифт ссылки */
+  }
+}
