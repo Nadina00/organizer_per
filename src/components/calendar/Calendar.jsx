@@ -25,7 +25,7 @@ export const MyCalendar = () => {
     end: new Date(event.end),
   }))
 
-
+  console.log(events)
   // Функция для добавления нового события
   const handleSelectSlot = ({ start, end }) => {
     const title = window.prompt("Enter event name:");
@@ -35,7 +35,11 @@ export const MyCalendar = () => {
         end,
         title,
       };
-      //setEvents([...events, newEvent]);
+      
+      if (!token) {
+        console.error('Ошибка: токен отсутствует');
+        return;
+      }
       dispatch(calendarOperations.eventsAdd(newEvent));
     }
     

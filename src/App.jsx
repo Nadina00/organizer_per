@@ -45,9 +45,9 @@ function App() {
           <Route
             path="/register"
             element={
-              <PublicRoute redirectTo="/event" restricted component={RegisterPage}>
-                <RegisterPage />
-              </PublicRoute>
+              <PublicRoute redirectTo="/login" restricted component={RegisterPage}>
+      <RegisterPage />
+    </PublicRoute>
             }
           />
 

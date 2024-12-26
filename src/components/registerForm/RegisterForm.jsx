@@ -4,6 +4,7 @@ import styles from "./RegisterForm.module.css";
 import { useDispatch } from "react-redux";
 import userOperations from "../../redux/user/user-operations";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 export const RegisterForm = () => {
@@ -37,11 +38,13 @@ export const RegisterForm = () => {
     setType(type === "password" ? "text" : "password");
   };
 
+  const navigate = useNavigate();
+
   const handleSubmitForm = async (evt) => {
     evt.preventDefault();
     try {
       const resultAction = await dispatch(userOperations.register({ email, password, name }));
-     
+      navigate("https://organize-noda-pers.onrender.com/login");
       if (resultAction.type === userOperations.register.fulfilled.type) {
         toast.success("Registration in successfully!");
 
