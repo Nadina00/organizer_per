@@ -108,6 +108,7 @@
   .header_nav ul {
     flex-direction: column; /* Пункты меню в столбик */
     gap: 10px;
+    padding: 0;
   }
 
   .link {
@@ -139,6 +140,7 @@
 
   .header_nav ul {
     gap: 8px;
+    padding: 0;
   }
 
   .link {

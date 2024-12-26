@@ -26,7 +26,7 @@ function App() {
     dispatch(userOperations.fetchCurrentUser());
   }, [dispatch]);
 
-   return (
+  return (
     <>
       {isRefreshing ? (
         <p>Wait</p>
@@ -45,9 +45,13 @@ function App() {
           <Route
             path="/register"
             element={
-              <PublicRoute redirectTo="/login" restricted component={RegisterPage}>
-      <RegisterPage />
-    </PublicRoute>
+              <PublicRoute
+                redirectTo="/login"
+                restricted
+                component={RegisterPage}
+              >
+                <RegisterPage />
+              </PublicRoute>
             }
           />
 
@@ -72,18 +76,18 @@ function App() {
           <Route path="/weather" element={<Weather />} />
           <Route path="/current/:cityLoc" element={<CurrentWeatherPage />} />
         </Routes>
-        
       )}
-      <ToastContainer 
-       position="top-right"
-       autoClose={3000} // Тривалість у мс
-       hideProgressBar={false}
-       newestOnTop={false}
-       closeOnClick
-       rtl={false}
-       pauseOnFocusLoss
-       draggable
-       pauseOnHover/>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000} // Тривалість у мс
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

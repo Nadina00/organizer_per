@@ -6,15 +6,13 @@ import userOperations from "../../redux/user/user-operations";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-
 export const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("password");
   const dispatch = useDispatch();
-
-
+  const navigate = useNavigate();
 
   const handleChangeValue = (e) => {
     const { value, name } = e.currentTarget;
@@ -38,13 +36,13 @@ export const RegisterForm = () => {
     setType(type === "password" ? "text" : "password");
   };
 
-  const navigate = useNavigate();
-
   const handleSubmitForm = async (evt) => {
     evt.preventDefault();
     try {
-      const resultAction = await dispatch(userOperations.register({ email, password, name }));
-      navigate("/login");
+      const resultAction = await dispatch(
+        userOperations.register({ email, password, name })
+      );
+
       if (resultAction.type === userOperations.register.fulfilled.type) {
         toast.success("Registration in successfully!");
 
@@ -53,11 +51,12 @@ export const RegisterForm = () => {
         setEmail("");
 
         setPassword("");
+
+        navigate("/login");
       } else {
         throw resultAction.payload || "Unknown error";
       }
     } catch (error) {
-      
       if (error === 409) {
         toast.error("Registration failed: user already exists.");
       } else {

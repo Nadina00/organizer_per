@@ -22,7 +22,7 @@ const userSlice = createSlice({
       state.token = action.payload.data.token;
       state.isLoader = false;
       state.error = false;
-      state.isLogging = true;
+      state.isLogging = false;
     });
     builder.addCase(userOperations.register.rejected, (state, action) => {
       state.isLoading = false;
