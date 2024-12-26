@@ -44,7 +44,7 @@ export const RegisterForm = () => {
     evt.preventDefault();
     try {
       const resultAction = await dispatch(userOperations.register({ email, password, name }));
-      navigate("https://organize-noda-pers.onrender.com/login");
+      navigate("/login");
       if (resultAction.type === userOperations.register.fulfilled.type) {
         toast.success("Registration in successfully!");
 
