@@ -6,7 +6,6 @@ const newsList = createAsyncThunk("news/newsList", async () => {
     const { data } = await axios.get(
       "https://content.guardianapis.com/search?api-key=194e26b0-d364-4440-a834-2da0ad6ff9a0"
     );
-    console.log(data.response.results);
 
     return data.response.results;
   } catch (error) {

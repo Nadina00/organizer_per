@@ -14,7 +14,7 @@ export const Header = () => {
   });
   const dispatch = useDispatch();
   const { user } = useAuth();
-  console.log(user.name);
+ 
 
   const onClick = () => {
     dispatch(userOperations.logOut());

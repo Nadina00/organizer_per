@@ -1,11 +1,11 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://organize-noda-pers.onrender.com";
 
 const eventsList = createAsyncThunk("calendar/eventsList", async () => {
   try {
-    const data = await axios.get("/event")
+    const data = await axios.get("https://organize-noda-pers.onrender.com/event")
    
     return data.data.result
     ;
@@ -21,7 +21,7 @@ const eventsAdd = createAsyncThunk("calendar/eventsAdd", async (credential) => {
       start: credential.start.toISOString(), // Перетворення в рядок ISO
       end: credential.end.toISOString(),
     };
-    const { data } = await axios.post("/event", serializedEvent);
+    const { data } = await axios.post("https://organize-noda-pers.onrender.com/event", serializedEvent);
     
     return data;
   } catch (error) {
@@ -31,7 +31,7 @@ const eventsAdd = createAsyncThunk("calendar/eventsAdd", async (credential) => {
 const eventsDel = createAsyncThunk("calendar/eventsDel", async (id) => {
   
   try {
-    const { data } = await axios.delete(`/event/${id}`);
+    const { data } = await axios.delete(`https://organize-noda-pers.onrender.com/event/${id}`);
    
     return data.result;
   } catch (error) {

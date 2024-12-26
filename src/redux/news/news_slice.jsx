@@ -22,7 +22,6 @@ const newsSlice = createSlice({
     builder.addCase(
       newsOperations.newsList.fulfilled,
       (state, action) => {
-        console.log(action)
         state.news = action.payload;
         state.isLoggind = false
       }

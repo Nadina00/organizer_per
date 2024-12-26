@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://organize-noda-pers.onrender.com";
 
 const token = {
   set(token) {
@@ -17,7 +17,7 @@ const register = createAsyncThunk(
   "auth/register",
   async (credential, thunkAPI) => {
     try {
-      const { data } = await axios.post("/register", credential);
+      const { data } = await axios.post("https://organize-noda-pers.onrender.com/register", credential);
       token.set(data.user.token);
       console.log(data);
       return { data };
@@ -28,7 +28,7 @@ const register = createAsyncThunk(
 );
 const logIn = createAsyncThunk("auth/login", async (credential, thunkAPI) => {
   try {
-    const { data } = await axios.post("/login", credential);
+    const { data } = await axios.post("https://organize-noda-pers.onrender.com/login", credential);
     console.log(data.user);
 
     token.set(data.user.token);
@@ -40,7 +40,7 @@ const logIn = createAsyncThunk("auth/login", async (credential, thunkAPI) => {
 
 const logOut = createAsyncThunk("auth/logOut", async (credentials) => {
   try {
-    const { data } = await axios.post("/logOut", credentials);
+    const { data } = await axios.post("https://organize-noda-pers.onrender.com/logOut", credentials);
     token.unset();
     return data;
   } catch (error) {
@@ -60,7 +60,7 @@ const fetchCurrentUser = createAsyncThunk(
     }
     token.set(persistedToken);
     try {
-      const { data } = await axios.get("/current");
+      const { data } = await axios.get("https://organize-noda-pers.onrender.com/current");
       console.log(data.user);
       return data.user;
     } catch (e) {

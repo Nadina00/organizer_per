@@ -1,11 +1,11 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://organize-noda-pers.onrender.com";
 
 const contactsList = createAsyncThunk("contacts/contactsList", async () => {
   try {
-    const data = await axios.get("/contact");
+    const data = await axios.get("https://organize-noda-pers.onrender.com/contact");
     return data.data.result;
   } catch (error) {
     console.error(error);
@@ -16,7 +16,7 @@ const contactsAdd = createAsyncThunk(
   "contacts/contactsAdd",
   async (credential, thunkAPI) => {
     try {
-      const { data } = await axios.post("/contact", credential);
+      const { data } = await axios.post("https://organize-noda-pers.onrender.com/contact", credential);
 
       return data.data;
     } catch (e) {
@@ -27,7 +27,7 @@ const contactsAdd = createAsyncThunk(
 );
 const contactsDel = createAsyncThunk("contacts/contactsDel", async (id, thunkAPI) => {
   try {
-    const { data } = await axios.delete(`/contact/${id}`);
+    const { data } = await axios.delete(`https://organize-noda-pers.onrender.com/contact/${id}`);
     return data.result;
   } catch (e) {
     return thunkAPI.rejectWithValue(e.response?.data?.message || "Failed to delete contact");

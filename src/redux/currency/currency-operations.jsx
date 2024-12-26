@@ -9,8 +9,6 @@ export const currencyList = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const data = await axios.get("https://v6.exchangerate-api.com/v6/5481d082091d38b3b11aa21d/latest/UAH");
-      console.log(data.data.conversion_rates
-      )
       const USD = data.data.conversion_rates.USD;
       const EUR = data.data.conversion_rates.EUR;
       const currency = { USD, EUR };
