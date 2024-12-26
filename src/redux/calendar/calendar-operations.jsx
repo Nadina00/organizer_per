@@ -16,15 +16,13 @@ const eventsList = createAsyncThunk("calendar/eventsList", async () => {
 
 const eventsAdd = createAsyncThunk("calendar/eventsAdd", async (credential) => {
   try {
-    const token = localStorage.getItem('persist:auth');
-    console.log(token)
+    
     const serializedEvent = {
       ...credential,
       start: credential.start.toISOString(), // Перетворення в рядок ISO
       end: credential.end.toISOString(),
     };
-    const { data } = await axios.post("https://organize-noda-pers.onrender.com/event", serializedEvent ,{
-      headers: { Authorization: `Bearer ${token}` }});
+    const { data } = await axios.post("https://organize-noda-pers.onrender.com/event", serializedEvent );
     
     return data;
   } catch (error) {
