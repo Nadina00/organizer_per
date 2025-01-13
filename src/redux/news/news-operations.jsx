@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 const newsList = createAsyncThunk("news/newsList", async () => {
   try {
     const { data } = await axios.get(
-      "https://content.guardianapis.com/search?api-key=194e26b0-d364-4440-a834-2da0ad6ff9a0"
+      "https://content.guardianapis.com/search?api-key=eb246130-cc93-4683-b111-c5979b780e81"
     );
 
     return data.response.results;
